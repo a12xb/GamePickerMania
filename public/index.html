@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Picker Mania</title>
+    <!-- <link rel="stylesheet" href="style.css"> ha majd CRAAZY SEXY legyen--> 
+     <style> /*addig igy*/
+        body { font-family: sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+        input[type="text"] { padding: 8px; width: 300px; }
+        .game-selection-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0f0f0;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+        .game-selection-item button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            font-size: 0.8em;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+        .main-header a {
+            color: inherit; /* basic szin */
+            text-decoration: none; /* ugly alahuzas */
+        }
+        .main-header a:visited {
+            color: inherit;
+        } /*ideiglenes ne legyen mar lila */
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-header"><a href="/">Game Picker Mania Ultimate Edition v0.3</a></h1>
+
+        <div id="home-section">
+            <button id="create-room-btn">Create Room</button>
+            <div id="room-link-display" style="display: none;">
+                <p>Link to share:</p>
+                <input type="text" id="room-link" readonly>
+                <button id="go-to-room-btn">Join Room</button>
+            </div>
+            <p>Or join an existing room via a link.</p>
+        </div>
+
+        <div id="room-section" style="display: none;">
+            <h2>Room: <span id="current-room-id"></span></h2>
+            <p>Pick games you'd want to play rn:</p>
+
+            <div id="game-selection-area">
+                <select id="game-search-select" style="width: 100%;"></select>
+                <button id="add-game-btn">Add Selected Game</button>
+            </div>
+
+            <h3>Your Picks:</h3>
+            <ul id="selected-games-list">
+                </ul>
+
+            <!--<div id="game-list-container"></div>-->
+
+            <button id="submit-games-btn">Submit</button>
+            <button id="evaluate-games-btn" style="display: none;">Evaluate intersection</button>
+
+            <div id="result-section" style="display: none;">
+                <h3>Intersection found:</h3>
+                <ul id="matches-list"></ul>
+                <p id="no-match-message" style="display: none; color: red;">No games in common (semmi kedvetek)</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
+    <script src="/script.js"></script>
+</body>
+</html>

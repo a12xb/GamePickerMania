@@ -1,0 +1,10 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Secrets
+.env # <-- Ezt már benne hagyjuk, hogy ne kerüljön fel!
+*.key
+*.pem

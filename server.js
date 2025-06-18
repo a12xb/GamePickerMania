@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // ddns
 const MYADDR_SECRET_KEY = process.env.MYADDR_SECRET_KEY;
 // const UPDATE_URL = `https://myaddr.io/update?key=${MYADDR_SECRET_KEY}&ip=self`; ha minden vesz

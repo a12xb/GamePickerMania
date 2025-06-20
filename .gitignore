@@ -5,6 +5,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Secrets
-.env # <-- Ezt már benne hagyjuk, hogy ne kerüljön fel!
+.env
 *.key
 *.pem
